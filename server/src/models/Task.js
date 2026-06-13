@@ -56,6 +56,14 @@ const taskSchema = new mongoose.Schema({
   },
   progressHistory: [{
     progress: Number,
+    note: String,
+    evidence: [{
+      originalName: String,
+      filename: String,
+      url: String,
+      mimeType: String,
+      size: Number
+    }],
     updatedAt: Date,
     updatedBy: {
       type: mongoose.Schema.Types.ObjectId,

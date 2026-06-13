@@ -62,7 +62,14 @@ export const taskAPI = {
   getMyTasks: (status) => api.get('/tasks/my', { params: { status } }),
   getById: (id) => api.get(`/tasks/${id}`),
   update: (id, data) => api.put(`/tasks/${id}`, data),
-  updateProgress: (id, progress) => api.put(`/tasks/${id}/progress`, { progress }),
+  updateProgress: (id, progressOrFormData) => {
+    if (progressOrFormData instanceof FormData) {
+      return api.put(`/tasks/${id}/progress`, progressOrFormData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
+    }
+    return api.put(`/tasks/${id}/progress`, { progress: progressOrFormData });
+  },
   approve: (id) => api.post(`/tasks/${id}/approve`),
   reject: (id, feedback) => api.post(`/tasks/${id}/reject`, { feedback }),
   delete: (id) => api.delete(`/tasks/${id}`),

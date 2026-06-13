@@ -169,9 +169,35 @@ exports.updateTask = async (req, res, next) => {
 exports.updateProgress = async (req, res, next) => {
   try {
     const { taskId } = req.params;
-    const { progress } = req.body;
+    
+    // Check if this is a multipart form with files
+    const isMultipart = req.headers['content-type']?.includes('multipart/form-data');
+    let { progress } = req.body;
+    let note = '';
+    let evidence = [];
 
-    if (progress < 0 || progress > 100) {
+    if (isMultipart) {
+      progress = parseInt(req.body.progress);
+      note = req.body.note || '';
+      
+      // Handle file uploads
+      if (req.files && req.files.length > 0) {
+        for (const file of req.files) {
+          evidence.push({
+            originalName: file.originalname,
+            filename: file.filename,
+            url: file.path || file.url, // Cloudinary URL or local path
+            mimeType: file.mimetype,
+            size: file.size
+          });
+        }
+      }
+    } else {
+      progress = parseInt(req.body.progress);
+      note = req.body.note || '';
+    }
+
+    if (isNaN(progress) || progress < 0 || progress > 100) {
       throw new AppError('Progress must be between 0 and 100', 400);
     }
 
@@ -192,6 +218,10 @@ exports.updateProgress = async (req, res, next) => {
       throw new AppError('Cannot update progress of a completed task', 400);
     }
 
+    if (progress <= task.progress) {
+      throw new AppError('New progress must be greater than current progress', 400);
+    }
+
     if (task.status === 'pending_review' && progress < 100) {
       task.status = 'in_progress';
     }
@@ -199,6 +229,8 @@ exports.updateProgress = async (req, res, next) => {
     task.progress = progress;
     task.progressHistory.push({
       progress,
+      note,
+      evidence,
       updatedAt: new Date(),
       updatedBy: req.userId
     });
@@ -219,7 +251,7 @@ exports.updateProgress = async (req, res, next) => {
       task: task._id,
       group: task.group,
       action: 'task_updated',
-      description: `Updated progress to ${progress}%`
+      description: `Updated progress to ${progress}%${note ? `: ${note}` : ''}`
     });
 
     const populatedTask = await Task.findById(task._id)
