@@ -330,9 +330,18 @@ const TaskDetail = () => {
                           <a
                             key={i}
                             href={file.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-1 text-xs text-primary-600 hover:underline bg-gray-50 px-2 py-1 rounded border"
+                            download={file.originalName}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              const link = document.createElement('a');
+                              link.href = file.url;
+                              link.download = file.originalName;
+                              link.target = '_blank';
+                              document.body.appendChild(link);
+                              link.click();
+                              document.body.removeChild(link);
+                            }}
+                            className="flex items-center gap-1 text-xs text-primary-600 hover:underline bg-gray-50 px-2 py-1 rounded border cursor-pointer"
                           >
                             <FiFile size={12} />
                             {file.originalName}

@@ -82,21 +82,4 @@ taskSchema.index({ group: 1, status: 1 });
 taskSchema.index({ assignedTo: 1, status: 1 });
 taskSchema.index({ lastProgressUpdate: 1 });
 
-taskSchema.pre('save', function(next) {
-  if (this.isModified('progress')) {
-    this.lastProgressUpdate = new Date();
-    this.progressHistory.push({
-      progress: this.progress,
-      updatedAt: new Date()
-    });
-    
-    if (this.progress === 0) {
-      this.status = 'todo';
-    } else if (this.progress > 0 && this.progress < 100) {
-      this.status = 'in_progress';
-    }
-  }
-  next();
-});
-
 module.exports = mongoose.model('Task', taskSchema);
