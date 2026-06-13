@@ -5,6 +5,13 @@ const taskController = require('../controllers/taskController');
 const { auth } = require('../middleware/auth');
 const { validate } = require('../middleware/validate');
 const { groupAccess } = require('../middleware/groupAccess');
+const { cloudinary, multerConfig } = require('../config/cloudinary');
+const multer = require('multer');
+
+const upload = multer({
+  ...multerConfig,
+  limits: { fileSize: 10 * 1024 * 1024 } // 10MB max per file
+});
 
 router.post('/', auth, [
   body('title').trim().notEmpty().withMessage('Task title is required'),
@@ -23,10 +30,7 @@ router.put('/:taskId', auth, [
   validate
 ], taskController.updateTask);
 
-router.put('/:taskId/progress', auth, [
-  body('progress').isInt({ min: 0, max: 100 }).withMessage('Progress must be between 0 and 100'),
-  validate
-], taskController.updateProgress);
+router.put('/:taskId/progress', auth, upload.array('files', 5), taskController.updateProgress);
 
 router.post('/:taskId/approve', auth, taskController.approveTask);
 

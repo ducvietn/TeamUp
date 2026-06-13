@@ -186,7 +186,7 @@ exports.updateProgress = async (req, res, next) => {
           evidence.push({
             originalName: file.originalname,
             filename: file.filename,
-            url: file.path || file.url, // Cloudinary URL or local path
+            url: file.path, // Cloudinary returns path as URL
             mimeType: file.mimetype,
             size: file.size
           });
