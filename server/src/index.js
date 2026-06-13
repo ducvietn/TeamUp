@@ -36,24 +36,14 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Test endpoint
 app.get('/api/test', (req, res) => {
   res.json({ success: true, message: 'Test OK' });
 });
 
-app.use('/api/auth', authRoutes);
-app.use('/api/groups', groupRoutes);
-app.use('/api/tasks', taskRoutes);
-app.use('/api/submissions', submissionRoutes);
-app.use('/api/peer-reviews', peerReviewRoutes);
-app.use('/api/reports', reportRoutes);
-app.use('/api/notifications', notificationRoutes);
-
-// Debug routes - remove after testing
-app.get('/api/test', (req, res) => res.json({ success: true, message: 'Direct test OK' }));
 app.get('/api/debug', (req, res) => {
   res.json({
     success: true,
+    message: 'Debug endpoint works!',
     routes: [
       '/api/auth',
       '/api/groups',
@@ -66,10 +56,13 @@ app.get('/api/debug', (req, res) => {
   });
 });
 
-// Debug auth route directly
-app.post('/api/auth/test-register', (req, res) => {
-  res.json({ success: true, message: 'Direct auth route works', body: req.body });
-});
+app.use('/api/auth', authRoutes);
+app.use('/api/groups', groupRoutes);
+app.use('/api/tasks', taskRoutes);
+app.use('/api/submissions', submissionRoutes);
+app.use('/api/peer-reviews', peerReviewRoutes);
+app.use('/api/reports', reportRoutes);
+app.use('/api/notifications', notificationRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
