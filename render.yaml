@@ -1,0 +1,15 @@
+database:
+  - name: MONGODB_URI
+    fromDatabase:
+      type: mongo
+      connectionString: mongodb+srv://teamupadmin:Vietdeptrai123@teamup.h6zcvdw.mongodb.net/?appName=TeamUp
+
+services:
+  - type: web
+    name: teamup-api
+    env: node
+    region: singapore
+    buildCommand: npm install
+    startCommand: npm start
+    plan: free
+    healthCheckPath: /api/health

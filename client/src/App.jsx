@@ -8,7 +8,6 @@ import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import GroupList from './pages/GroupList';
 import GroupDetail from './pages/GroupDetail';
-import TaskList from './pages/TaskList';
 import TaskDetail from './pages/TaskDetail';
 import MyTasks from './pages/MyTasks';
 import PeerReview from './pages/PeerReview';
