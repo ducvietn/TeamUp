@@ -219,38 +219,6 @@ const TaskDetail = () => {
               />
             </div>
 
-            {task.progressHistory && task.progressHistory.length > 0 && (
-              <div className="mt-4">
-                <h4 className="text-sm font-medium text-gray-700 mb-2">Cập nhật gần nhất:</h4>
-                {task.progressHistory.slice(-1).map((h, idx) => (
-                  <div key={idx} className="bg-gray-50 rounded-lg p-3">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="font-bold text-primary-600">{h.progress}%</span>
-                      <span className="text-sm text-gray-500">
-                        {new Date(h.updatedAt).toLocaleString('vi-VN')}
-                      </span>
-                    </div>
-                    {h.note && <p className="text-sm text-gray-600">{h.note}</p>}
-                    {h.evidence && h.evidence.length > 0 && (
-                      <div className="flex flex-wrap gap-2 mt-2">
-                        {h.evidence.map((file, i) => (
-                          <a
-                            key={i}
-                            href={file.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-1 text-xs text-primary-600 hover:underline bg-white px-2 py-1 rounded border"
-                          >
-                            <FiFile size={12} />
-                            {file.originalName}
-                          </a>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
 
             {task.progress === 100 && isAssigned && task.status !== 'done' && (
               <button
