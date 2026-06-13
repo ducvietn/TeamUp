@@ -49,6 +49,28 @@ app.use('/api/peer-reviews', peerReviewRoutes);
 app.use('/api/reports', reportRoutes);
 app.use('/api/notifications', notificationRoutes);
 
+// Debug routes - remove after testing
+app.get('/api/test', (req, res) => res.json({ success: true, message: 'Direct test OK' }));
+app.get('/api/debug', (req, res) => {
+  res.json({
+    success: true,
+    routes: [
+      '/api/auth',
+      '/api/groups',
+      '/api/tasks',
+      '/api/submissions',
+      '/api/peer-reviews',
+      '/api/reports',
+      '/api/notifications'
+    ]
+  });
+});
+
+// Debug auth route directly
+app.post('/api/auth/test-register', (req, res) => {
+  res.json({ success: true, message: 'Direct auth route works', body: req.body });
+});
+
 app.use(notFound);
 app.use(errorHandler);
 
