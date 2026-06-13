@@ -346,11 +346,32 @@ const TaskDetail = () => {
           {task.progressHistory && task.progressHistory.length > 0 && (
             <div className="card">
               <h3 className="font-semibold text-gray-900 mb-4">Lịch sử tiến độ</h3>
-              <div className="space-y-2 max-h-48 overflow-y-auto">
+              <div className="space-y-3 max-h-60 overflow-y-auto">
                 {task.progressHistory.slice().reverse().map((h, idx) => (
-                  <div key={idx} className="flex items-center justify-between text-sm">
-                    <span>{new Date(h.updatedAt).toLocaleDateString('vi-VN')}</span>
-                    <span className="font-medium">{h.progress}%</span>
+                  <div key={idx} className="border-b border-gray-100 pb-2 last:border-0">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="font-bold text-primary-600">{h.progress}%</span>
+                      <span className="text-xs text-gray-500">
+                        {new Date(h.updatedAt).toLocaleString('vi-VN')}
+                      </span>
+                    </div>
+                    {h.note && <p className="text-sm text-gray-600 mb-1">{h.note}</p>}
+                    {h.evidence && h.evidence.length > 0 && (
+                      <div className="flex flex-wrap gap-2 mt-1">
+                        {h.evidence.map((file, i) => (
+                          <a
+                            key={i}
+                            href={file.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1 text-xs text-primary-600 hover:underline bg-gray-50 px-2 py-1 rounded border"
+                          >
+                            <FiFile size={12} />
+                            {file.originalName}
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
