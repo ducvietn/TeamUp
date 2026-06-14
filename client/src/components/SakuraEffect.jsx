@@ -39,12 +39,12 @@ const SakuraEffect = () => {
 
       getRandomColor() {
         const colors = [
-          'rgba(216, 180, 254, ',   // violet-300
-          'rgba(192, 132, 252, ',   // purple-400
-          'rgba(233, 213, 255, ',   // purple-200
-          'rgba(221, 214, 254, ',   // violet-200
-          'rgba(196, 181, 253, ',   // violet-300
-          'rgba(167, 139, 250, ',   // violet-400
+          'rgba(255, 182, 193, ',   // light pink
+          'rgba(255, 192, 203, ',   // pink
+          'rgba(255, 218, 233, ',   // pale pink
+          'rgba(250, 200, 210, ',   // sakura pink
+          'rgba(255, 240, 245, ',   // very light pink
+          'rgba(248, 180, 200, ',   // medium pink
         ];
         return colors[Math.floor(Math.random() * colors.length)];
       }
