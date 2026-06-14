@@ -5,7 +5,7 @@ import SakuraEffect from './SakuraEffect';
 
 const Layout = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50/30 via-white to-fuchsia-50/20">
+    <div className="min-h-screen bg-gradient-to-br from-violet-50/30 via-white to-purple-50/20">
       <SakuraEffect />
       <Sidebar />
       <div className="ml-64">

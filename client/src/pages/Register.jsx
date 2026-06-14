@@ -51,11 +51,11 @@ const Register = () => {
     <div className="min-h-screen flex">
       <SakuraEffect />
       {/* Left Panel - Branding */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-fuchsia-700 via-primary-600 to-pink-600 relative overflow-hidden">
+      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-violet-700 via-primary-600 to-purple-700 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl" style={{ animation: 'float 6s ease-in-out infinite' }} />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" style={{ animation: 'float 6s ease-in-out infinite', animationDelay: '-3s' }} />
-          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-fuchsia-300/10 rounded-full blur-3xl" style={{ animation: 'pulse-glow 3s ease-in-out infinite' }} />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-violet-400/10 rounded-full blur-3xl" style={{ animation: 'float 6s ease-in-out infinite', animationDelay: '-3s' }} />
+          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-purple-300/10 rounded-full blur-3xl" style={{ animation: 'pulse-glow 3s ease-in-out infinite' }} />
           <div className="absolute inset-0 opacity-30" style={{
             backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
             backgroundSize: '60px 60px',
@@ -68,21 +68,21 @@ const Register = () => {
 
         <div className="relative z-10 flex flex-col justify-center px-16">
           <div className="flex items-center gap-4 mb-12">
-            <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-2xl shadow-pink-900/30">
+            <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-2xl shadow-violet-900/30">
               <span className="text-primary-500 font-extrabold text-3xl">T</span>
             </div>
             <div>
               <h1 className="text-white text-4xl font-extrabold tracking-tight">TeamUp</h1>
-              <p className="text-pink-200 text-sm mt-0.5">Nền tảng quản lý dự án</p>
+              <p className="text-violet-200 text-sm mt-0.5">Nền tảng quản lý dự án</p>
             </div>
           </div>
 
           <h2 className="text-white text-3xl font-bold leading-tight mb-4">
             Tham gia cùng<br />
-            <span className="text-pink-200">hàng trăm nhóm học tập</span>
+            <span className="text-violet-200">hàng trăm nhóm học tập</span>
           </h2>
 
-          <p className="text-pink-200 text-lg max-w-md mb-10 leading-relaxed">
+          <p className="text-violet-200 text-lg max-w-md mb-10 leading-relaxed">
             Tạo tài khoản miễn phí và bắt đầu quản lý nhóm, phân công công việc, theo dõi tiến độ ngay hôm nay.
           </p>
 
@@ -92,7 +92,7 @@ const Register = () => {
               { icon: '📋', text: 'Phân công & theo dõi công việc' },
               { icon: '🔍', text: 'Peer review & đánh giá đồng đội' },
             ].map((feature, i) => (
-              <div key={i} className="flex items-center gap-3 text-pink-100">
+              <div key={i} className="flex items-center gap-3 text-violet-100">
                 <span className="text-lg">{feature.icon}</span>
                 <span className="text-sm">{feature.text}</span>
               </div>

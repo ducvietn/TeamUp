@@ -19,8 +19,8 @@ body {
 }
 
 ::selection {
-  background-color: #fce7f3;
-  color: #be185d;
+  background-color: #e9d5ff;
+  color: #7e22ce;
 }
 
 ::-webkit-scrollbar {
@@ -33,12 +33,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #fbcfe8, #f9a8d4);
+  background: linear-gradient(to bottom, #d8b4fe, #c084fc);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #f9a8d4, #f472b6);
+  background: linear-gradient(to bottom, #c084fc, #a855f7);
 }
 
 @layer components {
@@ -80,7 +80,7 @@ body {
 }
 
 .progress-bar-fill {
-  @apply h-full bg-gradient-to-r from-pink-400 to-primary-500 rounded-full transition-all duration-500;
+  @apply h-full bg-gradient-to-r from-violet-400 to-purple-500 rounded-full transition-all duration-500;
 }
 
 .sidebar-link {
@@ -88,5 +88,5 @@ body {
 }
 
 .sidebar-link.active {
-  @apply bg-gradient-to-r from-pink-50 to-fuchsia-50 text-primary-600 font-semibold shadow-sm;
+  @apply bg-gradient-to-r from-violet-50 to-purple-50 text-primary-600 font-semibold shadow-sm;
 }
