@@ -13,3 +13,18 @@ services:
     startCommand: npm start
     plan: free
     healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CLIENT_URL
+        value: https://team-up-eosin.vercel.app
+      - key: JWT_SECRET
+        value: teamup_jwt_secret_key_2024_change_in_production_min_32_chars
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: MAX_FILE_SIZE
+        value: 10485760
+      - key: SUPABASE_URL
+        value: https://rtvdqxpsuddhftdibhni.supabase.co
+      - key: SUPABASE_STORAGE_KEY
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0dmRxeHBzdWRkaGZ0ZGliaG5pIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MTM2MTM5MywiZXhwIjoyMDk2OTM3MzkzfQ.TWUR6ooO81D34Rv03WcMotncosB23K9yDZK4p3-qF1o
