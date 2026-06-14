@@ -23,15 +23,15 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-64 bg-white border-r border-gray-200 flex flex-col">
-      <div className="p-6 border-b border-gray-100">
+    <aside className="fixed left-0 top-0 h-screen w-64 bg-white border-r border-gray-100/80 flex flex-col shadow-soft">
+      <div className="p-6 border-b border-gray-100/80">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">T</span>
+          <div className="w-11 h-11 bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl flex items-center justify-center shadow-lg shadow-primary-600/25 shrink-0">
+            <span className="text-white font-extrabold text-lg">T</span>
           </div>
-          <div>
-            <h1 className="font-bold text-gray-900 text-lg">TeamUp</h1>
-            <p className="text-xs text-gray-500">
+          <div className="min-w-0">
+            <h1 className="font-extrabold text-gray-900 text-lg tracking-tight">TeamUp</h1>
+            <p className="text-xs text-gray-500 font-medium">
               {user?.role === 'teacher' ? 'Giảng viên' : 'Sinh viên'}
             </p>
           </div>
@@ -63,7 +63,7 @@ const Sidebar = () => {
           <FiBell size={20} />
           <span>Thông báo</span>
           {unreadCount > 0 && (
-            <span className="absolute right-4 top-1/2 -translate-y-1/2 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+            <span className="ml-auto bg-gradient-to-r from-red-500 to-pink-500 text-white text-[10px] font-extrabold rounded-full px-1.5 py-0.5 min-w-[18px] text-center shadow-sm">
               {unreadCount > 9 ? '9+' : unreadCount}
             </span>
           )}

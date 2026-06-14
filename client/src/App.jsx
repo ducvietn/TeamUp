@@ -76,22 +76,29 @@ function App() {
               <Route path="profile" element={<Profile />} />
             </Route>
           </Routes>
-          <Toaster 
+          <Toaster
             position="top-right"
             toastOptions={{
-              duration: 4000,
+              duration: 3000,
               style: {
-                background: '#363636',
-                color: '#fff',
+                background: '#1e293b',
+                color: '#f1f5f9',
+                borderRadius: '12px',
+                fontWeight: '500',
+                fontSize: '14px',
+                boxShadow: '0 10px 40px rgba(0,0,0,0.15)',
+                border: '1px solid rgba(255,255,255,0.05)',
               },
               success: {
-                style: {
-                  background: '#22c55e',
+                iconTheme: {
+                  primary: '#22c55e',
+                  secondary: '#f1f5f9',
                 },
               },
               error: {
-                style: {
-                  background: '#ef4444',
+                iconTheme: {
+                  primary: '#ef4444',
+                  secondary: '#f1f5f9',
                 },
               },
             }}
