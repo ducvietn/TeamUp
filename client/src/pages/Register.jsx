@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
+import SakuraEffect from '../components/SakuraEffect';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -48,6 +49,7 @@ const Register = () => {
 
   return (
     <div className="min-h-screen flex">
+      <SakuraEffect />
       {/* Left Panel - Branding */}
       <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-fuchsia-700 via-primary-600 to-pink-600 relative overflow-hidden">
         <div className="absolute inset-0">
