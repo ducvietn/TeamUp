@@ -29,11 +29,11 @@ const Login = () => {
   return (
     <div className="min-h-screen flex">
       {/* Left Panel - Branding */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-primary-700 via-primary-600 to-indigo-800 relative overflow-hidden">
+      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-pink-600 via-primary-600 to-fuchsia-700 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl" style={{ animation: 'float 6s ease-in-out infinite' }} />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-400/10 rounded-full blur-3xl" style={{ animation: 'float 6s ease-in-out infinite', animationDelay: '-3s' }} />
-          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-blue-300/10 rounded-full blur-3xl" style={{ animation: 'pulse-glow 3s ease-in-out infinite' }} />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" style={{ animation: 'float 6s ease-in-out infinite', animationDelay: '-3s' }} />
+          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-fuchsia-300/10 rounded-full blur-3xl" style={{ animation: 'pulse-glow 3s ease-in-out infinite' }} />
           <div className="absolute inset-0 opacity-30" style={{
             backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
             backgroundSize: '60px 60px',
@@ -46,21 +46,21 @@ const Login = () => {
 
         <div className="relative z-10 flex flex-col justify-center px-16">
           <div className="flex items-center gap-4 mb-12">
-            <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-2xl shadow-primary-900/30">
-              <span className="text-primary-600 font-extrabold text-3xl">T</span>
+            <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-2xl shadow-pink-900/30">
+              <span className="text-primary-500 font-extrabold text-3xl">T</span>
             </div>
             <div>
               <h1 className="text-white text-4xl font-extrabold tracking-tight">TeamUp</h1>
-              <p className="text-primary-200 text-sm mt-0.5">Nền tảng quản lý dự án</p>
+              <p className="text-pink-200 text-sm mt-0.5">Nền tảng quản lý dự án</p>
             </div>
           </div>
 
           <h2 className="text-white text-3xl font-bold leading-tight mb-4">
             Quản lý nhóm &amp; dự án<br />
-            <span className="text-primary-200">một cách hiệu quả</span>
+            <span className="text-pink-200">một cách hiệu quả</span>
           </h2>
 
-          <p className="text-primary-200 text-lg max-w-md mb-10 leading-relaxed">
+          <p className="text-pink-200 text-lg max-w-md mb-10 leading-relaxed">
             Cộng tác với đồng đội, theo dõi tiến độ công việc và đánh giá peer review dễ dàng.
           </p>
 
@@ -68,7 +68,7 @@ const Login = () => {
             {[{ value: '500+', label: 'Người dùng' }, { value: '1K+', label: 'Nhóm hoạt động' }, { value: '99%', label: 'Hài lòng' }].map((stat) => (
               <div key={stat.label}>
                 <p className="text-white text-2xl font-extrabold">{stat.value}</p>
-                <p className="text-primary-300 text-sm mt-1">{stat.label}</p>
+                <p className="text-pink-300 text-sm mt-1">{stat.label}</p>
               </div>
             ))}
           </div>

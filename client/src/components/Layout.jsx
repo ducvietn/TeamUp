@@ -4,7 +4,7 @@ import Header from './Header';
 
 const Layout = () => {
   return (
-    <div className="min-h-screen bg-gray-50/50">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50/30 via-white to-fuchsia-50/20">
       <Sidebar />
       <div className="ml-64">
         <Header />
