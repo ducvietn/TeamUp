@@ -65,15 +65,6 @@ const Login = () => {
           <p className="text-violet-200 text-lg max-w-md mb-10 leading-relaxed">
             Cộng tác với đồng đội, theo dõi tiến độ công việc và đánh giá peer review dễ dàng.
           </p>
-
-          <div className="flex gap-8">
-            {[{ value: '500+', label: 'Người dùng' }, { value: '1K+', label: 'Nhóm hoạt động' }, { value: '99%', label: 'Hài lòng' }].map((stat) => (
-              <div key={stat.label}>
-                <p className="text-white text-2xl font-extrabold">{stat.value}</p>
-                <p className="text-violet-300 text-sm mt-1">{stat.label}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
 
